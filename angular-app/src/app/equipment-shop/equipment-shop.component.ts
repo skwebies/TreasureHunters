@@ -1,7 +1,6 @@
 import { Equipment } from './../models/equipment.model';
 import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-equipment-shop',
@@ -20,7 +19,7 @@ export class EquipmentShopComponent implements OnInit {
     });
   }
 
-  purchaseEquipement(equipment: Equipment) {
+  purchaseEquipment(equipment: Equipment) {
     console.info("eq", equipment);
     const response = this.apiService.createPurchase(equipment.id);
     console.info("purchase", response);

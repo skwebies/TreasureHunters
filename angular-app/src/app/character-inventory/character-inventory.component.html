@@ -2,22 +2,22 @@
   <div class="col">
     <div class="row">
       <div class="col-12">
-        <div class="col-4" *ngFor="let character of characters; let index = index">
-          <div *ngIf="(index + 1) % randomNumber === 0">
-            <h4>{{character.name + ' ' + index}}</h4>
-            <p>Wealth: {{character.wealth + index}}</p>
-            <p>Luck: {{character.luck + index}}</p>
-            <p>HitPoints: {{character.hitPoints + index}}</p>
+        <div class="col-4">
+          <div>
+            <h4>{{ character.name }}</h4>
+            <p>Wealth: {{ character.wealth }}</p>
+            <p>Luck: {{ character.luck }}</p>
+            <p>HitPoints: {{ character.hitPoints }}</p>
           </div>
-          <div class="col-8" *ngFor="let equipment of character.equipment;">
-              <h5>Equipments: </h5>
-              <h6>Name: {{equipment.name}}</h6>
-              <p>Type: {{equipment.type}}</p>
-              <p>Luck: {{equipment.luckModifier}}</p>
-              <p>HitPoints: {{equipment.hpModifier}}</p>
-            </div>
+          <div class="col-8" *ngFor="let equipment of character.equipment">
+            <h5>Equipments:</h5>
+            <h6>Name: {{ equipment.name }}</h6>
+            <p>Type: {{ equipment.type }}</p>
+            <p>Luck: {{ equipment.luckModifier }}</p>
+            <p>HitPoints: {{ equipment.hpModifier }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

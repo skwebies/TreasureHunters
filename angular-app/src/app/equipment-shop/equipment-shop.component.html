@@ -2,14 +2,20 @@
   <div class="col">
     <div class="row">
       <div class="col-3" *ngFor="let equipment of equipments">
-        <p>{{equipment.id}}</p>
-        <h4>{{equipment.name}}</h4>
-        <p>Type: {{equipment.type}}</p>
-        <p>Value: {{equipment.value}}</p>
-        <p>HpModifier: {{equipment.hpModifier}}</p>
-        <p>Luck Modifier: {{equipment.luckModifier}}</p>
+        <p>{{ equipment.id }}</p>
+        <h4>{{ equipment.name }}</h4>
+        <p>Type: {{ equipment.type }}</p>
+        <p>Value: {{ equipment.value }}</p>
+        <p>HpModifier: {{ equipment.hpModifier }}</p>
+        <p>Luck Modifier: {{ equipment.luckModifier }}</p>
 
-        <button class="btn btn-primary btn-small" (click) = "purchaseEquipement(equipment)">Purchase</button>
+        <!--disable button if character does not have enough gold -->
+        <button
+          class="btn btn-primary btn-small"
+          (click)="purchaseEquipement(equipment)"
+        >
+          Purchase
+        </button>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@ import { Character } from '../models/character.model';
 })
 export class ApiService {
   public equipments: Equipment;
-
+  private character: Character;
   constructor(private readonly http: HttpClient) {}
 
   getCharacter(): Observable<Character> {
@@ -23,8 +23,19 @@ export class ApiService {
 
   createPurchase(equipmentId: string): Observable<any> {
     const httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    }
-    return this.http.post(environment.apiBaseUrl + 'Purchases/' + equipmentId, httpOptions);
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+    return this.http.post(
+      environment.apiBaseUrl + 'Purchases/' + equipmentId,
+      httpOptions
+    );
+  }
+
+  public saveCharacter(character: Character): void {
+    this.character = character;
+  }
+
+  public getUptadedCharacter(character: Character): Character {
+    return this.character;
   }
 }
